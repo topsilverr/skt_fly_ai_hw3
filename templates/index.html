@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CIFAR-10 Classifier</title>
+</head>
+<body>
+    <h1>CIFAR-10 Classifier</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    <form method="POST" action="/predict" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Predict">
+    </form>
+    {% if prediction %}
+        <p>Prediction: {{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
